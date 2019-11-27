@@ -27,4 +27,8 @@ public class SunsetFragment extends Fragment {
         return view;
 
     }
+    private void startAnimation(){
+        float sunYStart = mSunView.getTop();
+        float sunYEnd = mSkyView.getHeight();
+    }
 }
