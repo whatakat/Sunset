@@ -1,5 +1,6 @@
 package com.example.sunset;
 
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,5 +31,10 @@ public class SunsetFragment extends Fragment {
     private void startAnimation(){
         float sunYStart = mSunView.getTop();
         float sunYEnd = mSkyView.getHeight();
+
+        ObjectAnimator heightAnimator = ObjectAnimator
+                .ofFloat(mSunView, "y", sunYStart, sunYEnd)
+                .setDuration(3000);
+        heightAnimator.start();
     }
 }
