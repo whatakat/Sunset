@@ -54,6 +54,11 @@ public class SunsetFragment extends Fragment {
                 .ofFloat(mSunView, "y", sunYStart, sunYEnd)
                 .setDuration(3000);
         heightAnimator.setInterpolator(new AccelerateInterpolator(2));
+
+        ObjectAnimator sunsetSkyAnimator = ObjectAnimator
+                .ofInt(mSkyView,"backgroundColor", mBlueSkyColor, mSunsetSkyColor)
+                .setDuration(3000);
         heightAnimator.start();
+        sunsetSkyAnimator.start();
     }
 }
